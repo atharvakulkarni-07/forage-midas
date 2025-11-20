@@ -6,7 +6,6 @@ import jakarta.persistence.*;
 public class UserRecord {
 
     @Id
-    @GeneratedValue()
     private long id;
 
     @Column(nullable = false)
@@ -16,6 +15,12 @@ public class UserRecord {
     private float balance;
 
     protected UserRecord() {
+    }
+
+    public UserRecord(long id, String name, float balance){
+        this.id = id;
+        this.name = name;
+        this.balance = balance;
     }
 
     public UserRecord(String name, float balance) {
